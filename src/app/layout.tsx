@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ActiveSectionProvider from "@/context/active-section-context";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -20,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased bg-gray-950 text-gray-50 overflow-y-scroll`}>
         <Header />
-        <ActiveSectionProvider>{children}</ActiveSectionProvider>
+        {children}
         <Footer />
       </body>
     </html>

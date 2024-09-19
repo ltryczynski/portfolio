@@ -1,7 +1,3 @@
-import React from "react";
-import corpcommentImg from "@/assets/corpcomment.png";
-import rmtdevImg from "@/assets/rmtdev.png";
-import wordanalyticsImg from "@/assets/wordanalytics.png";
 
 export const links = [
     {

@@ -1,9 +1,5 @@
 "use client";
-import React from "react";
-// import SectionHeading from "./section-heading";
-// import { FaPaperPlane } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { PlaneIcon } from "lucide-react";
+// import { motion } from "framer-motion";
 import H2 from "../h2";
 import Wrapper from "../wrapper";
 import { Button } from "../ui/button";
@@ -28,6 +24,7 @@ export default function ContactSection() {
         className="mt-10 flex flex-col gap-2 max-w-[768px] w-full"
         action={async (formData) => {
           //   await sendEmail(formData);
+          console.log(formData);
         }}>
         <input
           type="email"

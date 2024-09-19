@@ -1,28 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Wrapper from "../wrapper";
 import H2 from "../h2";
 import Image from "next/image";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 const ImageMotion = motion.create(Image);
-
-// const fadeInAnimationImageVars = {
-//   initial: {
-//     opacity: 0,
-//     y: 50,
-//   },
-//   animate: {
-//     opacity: 1,
-//     y: 0,
-//     transition: {
-//       delay: 0.1,
-//       duration: 0.3,
-//     },
-//   },
-// };
 
 export default function AboutMe() {
   const ref = useRef<HTMLElement>(null);
