@@ -52,7 +52,7 @@ export default function AboutMe() {
         }}>
         <H2>About me</H2>
         <p className="text-lg max-w-[768px]">
-          {`Specializing in building modern web applications with Next.js and React, I focus on creating fast, responsive interfaces that adhere to the "mobile first" approach. Leveraging Tailwind CSS, I design aesthetic and cohesive applications that perform smoothly across various devices.`}
+          {`Specializing in building modern web applications with Next.js and React, I focus on creating fast, responsive interfaces. Leveraging Tailwind CSS, I design aesthetic and cohesive applications that perform smoothly across various devices.`}
         </p>
         <p className="text-lg max-w-[768px]">
           {`With 4 years of experience in WordPress, ACF, and WooCommerce, I've developed a solid foundation in e-commerce solutions and custom website development.`}

@@ -38,9 +38,9 @@ export default function HeroWrapper() {
   return (
     <Wrapper
       ref={ref}
-      className="relative gap-10 mb-10 flex flex-col justify-center items-center w-full min-h-screen z-0 ">
+      className="relative  mb-10 flex flex-col justify-center items-center w-full min-h-screen z-0 ">
       <Background type="both" />
-      <div className="flex flex-col relative w-max h-max z-10">
+      <div className="flex flex-col relative w-max h-max z-10 mb-20">
         <H1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold">
           <motion.span
             initial={{ opacity: 0, rotate: 20, scale: 0.6, y: 10 }}
@@ -59,11 +59,11 @@ export default function HeroWrapper() {
         </H1>
         <div className="">
           <div
-            className="h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[250px] sm:w-[350px] md:w-[400px] lg:w-[450px]"
+            className="h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[250px] sm:w-[350px] md:w-[400px] lg:w-[450px]"
             ref={lottieRef}></div>
         </div>
       </div>
-      <div className="space-y-5">
+      <div className="space-y-5 mb-10">
         <motion.h2
           initial={{ opacity: 0, scale: 0.6, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
