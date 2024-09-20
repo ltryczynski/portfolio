@@ -31,55 +31,62 @@ export const projectsData = [
     {
         title: "Evento",
         description:
-            "",
-        tags: ["React", "Next.js", "Postgress", "Prisma", "Tailwind", "Framer-motion", 'TypeScript'],
+            "Nextjs app. It uses Postgress as a database, Prisma as an ORM and Tailwind for styling and Framer-motion for animations.",
+        tags: ["React", "Postgress", "Next.js", "Prisma", "Framer-motion", 'TypeScript', "Tailwind",],
         imageUrl: '/evento.jpg',
+        projectUrl: 'https://evento.ltmedia.pl/',
     },
     {
         title: "rmtDev",
         description:
-            "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-        tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+            "Job board for remote developer jobs. It uses Vite as a bundler and React-query for fetching and caching data from the server.",
+        tags: ["React", "TypeScript", "Vite", 'React-query'],
         imageUrl: '/rmtdev.png',
+        projectUrl: 'https://rmtdev.ltmedia.pl/',
     },
     {
         title: "TalkNow",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+            // blog template
+            "A blog template built with modern web technologies to provide a seamless and interactive user experience.",
+        tags: ["React", "Postgress", "Next.js", "Prisma", "Framer-motion", "Tailwind", 'TypeScript'],
         imageUrl: '/talknow.jpg',
+        projectUrl: 'https://talknow.ltmedia.pl/',
     },
     {
         title: "Landing Agency",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+            "Landing page for a digital agency. It uses Swiper for the slider and GSAP for animations.",
+        tags: ["React", "Next.js", "Typescript", "Tailwind", "GSAP", 'Swiper',],
         imageUrl: '/landing.jpg',
+        projectUrl: 'https://landing.ltmedia.pl/',
     },
     {
-        title: "treckbag",
+        title: "Treckbag",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+            "Packing organizer for travelers. It uses Zustand for state management and Vite as a bundler.",
+        tags: ["React", "Vite", "Javascript", "Zusand"],
         imageUrl: '/treckbag.jpg',
+        projectUrl: 'https://treckbag.ltmedia.pl/',
     },
 
     {
         title: "Dorjan",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+            "Buissness website. It uses Wordpress CMS, GSAP for animations and ACF for custom fields.",
+        tags: ["WordPress", "GSAP", "mySQL", "PHP", "ACF"],
         imageUrl: '/dorjan.jpg',
+        projectUrl: 'https://treckbag.ltmedia.pl/',
     },
 
     {
         title: "Ciemne-Szkiełko",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+            "Buissness website. It uses Wordpress CMS and ACF for custom fields.",
+        tags: ["Wordpress", "mySQL", "PHP", "ACF"],
         imageUrl: '/ciemneszkielko.jpg',
+        projectUrl: 'https://treckbag.ltmedia.pl/',
     },
-
 ] as const;
 
 

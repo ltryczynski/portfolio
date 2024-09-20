@@ -4,8 +4,11 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { useActiveSectionContext } from "@/lib/hooks";
 
 export default function Header() {
+  const { activeSection } = useActiveSectionContext();
+  console.log(activeSection.toString() === links[0].name);
   return (
     <motion.header
       className="w-max bg-gray-50/5 border border-gray-50/5 backdrop-blur-xl rounded-full fixed top-4 inset-x-0 mx-auto z-50"
@@ -17,8 +20,19 @@ export default function Header() {
           {links.map((link) => (
             <li
               key={link.hash}
-              className="px-4 py-2 text-md first:rounded-l-full last-rounded-r-full">
+              className="px-4 py-2 text-md first:rounded-l-full last-rounded-r-full relative">
               <Link href={link.hash}>{link.name}</Link>
+
+              {activeSection.toString() === link.name ? (
+                <motion.div
+                  layoutId="header-nav"
+                  className="w-full h-full bg-gray-50/10 absolute inset-0 m-auto rounded-full"
+                  transition={{
+                    type: "spring",
+                    stiffness: 380,
+                    damping: 30,
+                  }}></motion.div>
+              ) : null}
             </li>
           ))}
         </ul>

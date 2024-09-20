@@ -4,12 +4,16 @@ import React from "react";
 import Wrapper from "../wrapper";
 import { motion } from "framer-motion";
 import { skills } from "@/lib/data";
+import { useActiveSection } from "@/lib/hooks";
 
 export default function SkillsSection() {
+  const { ref } = useActiveSection("Skills");
+
   return (
     <Wrapper
-      className="py-20 border-y border-gray-50/5 flex items-center flex-col gap-y-10"
-      id="skills">
+      className="container py-20 border-t border-gray-50/5 flex items-center flex-col gap-y-10"
+      id="skills"
+      ref={ref}>
       <motion.h2
         whileInView={{
           opacity: 1,

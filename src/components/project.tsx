@@ -8,9 +8,10 @@ type ProjectProps = {
   description: string;
   tags: string[];
   imageUrl: string;
+  projectUrl: string;
 };
 
-export default function Project({ title, description, tags, imageUrl }: ProjectProps) {
+export default function Project({ title, description, tags, imageUrl, projectUrl }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
@@ -29,29 +30,31 @@ export default function Project({ title, description, tags, imageUrl }: ProjectP
         once: true,
       }}
       className="group">
-      <article className="bg-gray-50/5 w-full border border-gray-50/10 self-center overflow-hidden sm:pr-8 relative sm:h-[24rem] transition">
-        <div className="pt-4 pb-6 px-2 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[60%] flex flex-col h-full">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-50/70">{description}</p>
-          <ul className="flex flex-wrap gap-2 mt-4 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                key={index}
-                className="bg-gray-950/50 px-4 py-2 text-[0.7rem] uppercase tracking-wider text-white rounded-full">
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={400}
-          height={300}
-          quality={90}
-          className="absolute h-4/5 object-cover bottom-0 -right-64 w-[28.25rem] rounded-tl-2xl shadow-2xl transition group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-3 group-hover:-rotate-2 "
-        />
-      </article>
+      <a href={projectUrl} target="_blank">
+        <article className="bg-gray-50/5 w-full border border-gray-50/10 self-center overflow-hidden sm:pr-8 relative sm:h-[24rem] transition">
+          <div className="pt-4 pb-6 px-2 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[70%] flex flex-col h-full">
+            <h3 className="text-2xl font-semibold">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-50/70">{description}</p>
+            <ul className="flex flex-wrap gap-1 mt-4 sm:mt-auto">
+              {tags.map((tag, index) => (
+                <li
+                  key={index}
+                  className="bg-gray-950/50 px-4 py-2 text-[0.7rem] uppercase tracking-wider text-white rounded-full">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Image
+            src={imageUrl}
+            alt={title}
+            width={400}
+            height={300}
+            quality={90}
+            className="absolute h-4/5 object-cover bottom-0 -right-72 w-[28.25rem] rounded-tl-2xl shadow-2xl transition group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-3 group-hover:-rotate-2 "
+          />
+        </article>
+      </a>
     </motion.div>
   );
 }

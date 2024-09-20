@@ -1,15 +1,16 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Wrapper from "../wrapper";
 import H2 from "../h2";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useActiveSection } from "@/lib/hooks";
 
 const ImageMotion = motion.create(Image);
 
 export default function AboutMe() {
-  const ref = useRef<HTMLElement>(null);
+  const { ref } = useActiveSection("About");
 
   return (
     <Wrapper
@@ -50,21 +51,14 @@ export default function AboutMe() {
           once: true,
         }}>
         <H2>About me</H2>
-        <p className="text-lg max-w-[768px] text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A ratione veniam cumque.
-          Voluptates at soluta voluptas quidem. Fugit suscipit aut officia illum harum, sint ratione
-          quaerat veritatis corporis excepturi dolor fugiat, in vero nisi esse! Et dolorum, ratione
-          aperiam optio vitae ex in alias perferendis expedita totam iusto, facere illum! Lorem
-          ipsum dolor sit amet consectetur adipisicing elit.{" "}
+        <p className="text-lg max-w-[768px]">
+          {`Specializing in building modern web applications with Next.js and React, I focus on creating fast, responsive interfaces that adhere to the "mobile first" approach. Leveraging Tailwind CSS, I design aesthetic and cohesive applications that perform smoothly across various devices.`}
         </p>
-        <p className="text-lg max-w-[768px] text-justify">
-          Itaque ullam sapiente cumque magni porro delectus, hic veniam reprehenderit quia et ab
-          modi, amet expedita dolor? Corporis voluptatum magni eos nemo. Officia ea ipsa animi quis
-          recusandae natus libero eum nesciunt aliquid nemo praesentium quasi sit temporibus minima
-          dolores quas, cupiditate, commodi in blanditiis maiores excepturi unde autem. Laborum,
-          possimus tenetur! Ratione accusantium vel veniam modi tempora rem similique hic nemo nulla
-          quisquam molestias alias, omnis ut perspiciatis aspernatur nam ad, in eos repellat
-          asperiores doloremque.
+        <p className="text-lg max-w-[768px]">
+          {`With 4 years of experience in WordPress, ACF, and WooCommerce, I've developed a solid foundation in e-commerce solutions and custom website development.`}
+        </p>
+        <p className="text-lg max-w-[768px]">
+          {`Proficient in JavaScript and TypeScript, I also work extensively with libraries such as GSAP, Framer Motion, React Query, shadcn-ui, and Zustand to build dynamic, interactive, and efficient web applications.`}
         </p>
       </motion.div>
     </Wrapper>

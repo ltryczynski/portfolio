@@ -6,7 +6,7 @@ import SkillsSection from "@/components/sections/skills-secton";
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full flex flex-col items-center">
       <HeroWrapper />
       <SkillsSection />
       <AboutMeSection />

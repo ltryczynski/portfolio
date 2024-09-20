@@ -3,12 +3,14 @@
 import H2 from "../h2";
 import Wrapper from "../wrapper";
 import { Button } from "../ui/button";
+import { useActiveSection } from "@/lib/hooks";
 // import { sendEmail } from "@/actions/sendEmail";
 
 export default function ContactSection() {
+  const { ref } = useActiveSection("Contact");
   return (
     <Wrapper
-      //   ref={ref}
+      ref={ref}
       id="contact"
       className="mb-20 mt-20 pt-20 border-t border-gray-50/5 w-full container flex flex-col items-center">
       <H2>Contact me</H2>

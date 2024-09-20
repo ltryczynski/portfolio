@@ -9,10 +9,13 @@ import { useEffect, useRef } from "react";
 import Background from "../background";
 import H1 from "../h1";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { useActiveSection } from "@/lib/hooks";
 
 // const MotionImage = motion.create(Image);
 
 export default function HeroWrapper() {
+  const { ref } = useActiveSection("Home");
+
   const lottieRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let instance: AnimationItem | null = null;
@@ -33,10 +36,12 @@ export default function HeroWrapper() {
   }, []);
 
   return (
-    <Wrapper className="relative gap-16 pb-20 flex flex-col justify-center items-center w-full h-screen z-0 ">
+    <Wrapper
+      ref={ref}
+      className="relative gap-10 mb-10 flex flex-col justify-center items-center w-full min-h-screen z-0 ">
       <Background type="both" />
       <div className="flex flex-col relative w-max h-max z-10">
-        <H1 className="text-3xl lg:text-6xl font-semibold">
+        <H1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold">
           <motion.span
             initial={{ opacity: 0, rotate: 20, scale: 0.6, y: 10 }}
             animate={{ opacity: 1, scale: 1, rotate: -10, y: 0 }}
@@ -53,7 +58,7 @@ export default function HeroWrapper() {
           </motion.span>
         </H1>
         <div className="">
-          <div className="h-[550px]" ref={lottieRef}></div>
+          <div className="h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px]" ref={lottieRef}></div>
         </div>
       </div>
       <div className="space-y-5">
@@ -68,7 +73,7 @@ export default function HeroWrapper() {
           initial={{ opacity: 0, scale: 0.6, y: -40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.3, type: "spring" }}
-          className="text-xl text-center">
+          className="text-base lg:text-xl text-center">
           React / Next.js | Wordpress | TailwindCSS
         </motion.p>
       </div>
