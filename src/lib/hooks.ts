@@ -146,7 +146,7 @@ export function useActiveSectionContext() {
 export function useActiveSection(section: SectionProps) {
     const context = useActiveSectionContext();
     const [ref, isIntersecting] = useIntersectionObserver({
-        threshold: 0.3,
+        threshold: 0.6,
         onChange: (isVisible) => {
             if (isVisible) {
                 context.handleChangeActiveSection(section);

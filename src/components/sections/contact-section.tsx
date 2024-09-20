@@ -4,9 +4,19 @@ import H2 from "../h2";
 import Wrapper from "../wrapper";
 import { Button } from "../ui/button";
 import { useActiveSection } from "@/lib/hooks";
+import { sendEmail } from "@/actions/sendEmail";
+import { useState } from "react";
 // import { sendEmail } from "@/actions/sendEmail";
 
 export default function ContactSection() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSendAction = async (formData: FormData) => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await sendEmail(formData);
+    setIsLoading(false);
+  };
+
   const { ref } = useActiveSection("Contact");
   return (
     <Wrapper
@@ -24,10 +34,8 @@ export default function ContactSection() {
 
       <form
         className="mt-10 flex flex-col gap-2 max-w-[768px] w-full"
-        action={async (formData) => {
-          //   await sendEmail(formData);
-          console.log(formData);
-        }}>
+        action={handleSendAction}
+        onSubmit={() => setIsLoading(true)}>
         <input
           type="email"
           name="email"
@@ -47,8 +55,9 @@ export default function ContactSection() {
           type="submit"
           size="lg"
           variant="outline"
-          className="w-max border-gray-50/50 self-end">
-          Submit
+          disabled={isLoading}
+          className="w-max border-gray-50/50 self-end disabled:bg-slate-50/80 disabled:text-gray-950">
+          {isLoading ? "Sending..." : "Submit"}
         </Button>
       </form>
     </Wrapper>
