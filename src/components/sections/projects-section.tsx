@@ -11,10 +11,10 @@ export default function ProjectsSection() {
   return (
     <Wrapper
       ref={ref}
-      className="min-h-screen border-t container border-gray-50/5 px-5 justify-start lg:px-10 mx-auto w-full h-full flex items-center flex-col gap-20   py-20"
+      className="min-h-screen border-t container border-gray-50/5 px-5 justify-start lg:px-10 mx-auto w-full h-full flex items-center flex-col gap-20 py-20"
       id="projects">
       <H2 className="lg:col-span-2 2xl:col-span-3 text-center">Projects</H2>
-      <div className="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-10 container">
+      <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10 container">
         {projectsData.map((project, index) => (
           <Project
             key={index}

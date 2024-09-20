@@ -18,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased bg-gray-950 text-gray-50 overflow-y-scroll`}>
+      <body
+        className={`${inter.className} antialiased w-screen overflow-x-hidden bg-gray-950 text-gray-50 overflow-y-scroll`}>
         <ActiveSectionProvider>
           <Header />
           {children}

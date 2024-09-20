@@ -84,23 +84,27 @@ export default function HeroWrapper() {
         initial={{ opacity: 0, scale: 0.6, y: 100 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.3, type: "spring" }}
-        className="flex justify-center gap-5 z-10">
-        <Button asChild size="lg" variant="outline">
-          <Link href="/">CV</Link>
-        </Button>
-        <Button asChild size="lg" variant="secondary">
-          <Link href="/">Projects</Link>
-        </Button>
-        <Button asChild size="icon-lg" variant="outline">
-          <Link href="/">
-            <GitHubLogoIcon />
-          </Link>
-        </Button>
-        <Button asChild size="icon-lg" variant="outline">
-          <Link href="/">
-            <LinkedInLogoIcon />
-          </Link>
-        </Button>
+        className="flex flex-col sm:flex-row items-center justify-center gap-5 z-10 flex-wrap">
+        <div className="space-x-5">
+          <Button asChild size="lg" variant="outline">
+            <Link href="/">CV</Link>
+          </Button>
+          <Button asChild size="lg" variant="secondary">
+            <Link href="/">Projects</Link>
+          </Button>
+        </div>
+        <div className="space-x-5">
+          <Button asChild size="icon-lg" variant="outline">
+            <Link href="/">
+              <GitHubLogoIcon />
+            </Link>
+          </Button>
+          <Button asChild size="icon-lg" variant="outline">
+            <Link href="/">
+              <LinkedInLogoIcon />
+            </Link>
+          </Button>
+        </div>
       </motion.div>
     </Wrapper>
   );

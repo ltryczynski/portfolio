@@ -114,3 +114,6 @@ export const skills = [
     "MySQL",
     "MongoDB",
 ];
+
+
+export const MOBILE_BREAKPOINT = 640;

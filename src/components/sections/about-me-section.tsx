@@ -23,7 +23,7 @@ export default function AboutMe() {
           width={400}
           height={400}
           alt="Łukasz Tryczyński"
-          className="object-cover w-[300px] h-[300px] rounded-full aspect-square relative z-20"
+          className="object-cover w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full aspect-square relative z-20"
           initial={{ opacity: 0, y: 50, scale: 0.8 }}
           whileInView={{
             opacity: 1,
@@ -43,7 +43,7 @@ export default function AboutMe() {
         />
       </div>
       <motion.div
-        className="space-y-10"
+        className="space-y-10 mx-5 sm:mx-10 md:mx-0"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
         viewport={{

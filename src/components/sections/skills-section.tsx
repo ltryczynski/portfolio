@@ -30,7 +30,7 @@ export default function SkillsSection() {
         className="text-2xl lg:text-5xl font-medium">
         Skills
       </motion.h2>
-      <ul className="max-w-[768px] flex justify-center gap-5 flex-wrap">
+      <ul className="max-w-[768px] flex justify-center gap-5 flex-wrap items-center">
         {skills.map((skill, index) => (
           <motion.li
             key={index}
@@ -42,11 +42,10 @@ export default function SkillsSection() {
               opacity: 1,
               y: 0,
               transition: { duration: 0.1, delay: 0.05 * index },
-              type: "spring",
             }}
             viewport={{
               once: true,
-              margin: "-200px",
+              // margin: "-100px",
             }}
             className="px-5 py-3 border border-gray-50/20 text-gray-50/90 rounded-full">
             {skill}
