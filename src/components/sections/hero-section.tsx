@@ -58,7 +58,9 @@ export default function HeroWrapper() {
           </motion.span>
         </H1>
         <div className="">
-          <div className="h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px]" ref={lottieRef}></div>
+          <div
+            className="h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[250px] sm:w-[350px] md:w-[400px] lg:w-[450px]"
+            ref={lottieRef}></div>
         </div>
       </div>
       <div className="space-y-5">
