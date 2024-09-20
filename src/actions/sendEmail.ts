@@ -2,7 +2,6 @@
 import { Resend } from "resend";
 import { getErrorMessage, validateString } from "@/lib/utils";
 import ContactForm from "@/app/email/contactForm";
-// import { EmailTemplate } from "@/components/email-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
