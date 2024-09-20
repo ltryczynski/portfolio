@@ -90,17 +90,23 @@ export default function HeroWrapper() {
             <Link href="/">CV</Link>
           </Button>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/">Projects</Link>
+            <Link href="#projects">Projects</Link>
           </Button>
         </div>
         <div className="space-x-5">
           <Button asChild size="icon-lg" variant="outline">
-            <Link href="/">
+            <Link
+              href="https://github.com/ltryczynski"
+              target="_blank"
+              rel="nofollow noopener noreferrer">
               <GitHubLogoIcon />
             </Link>
           </Button>
           <Button asChild size="icon-lg" variant="outline">
-            <Link href="/">
+            <Link
+              href="https://www.linkedin.com/in/%C5%82ukasz-tryczy%C5%84ski-6289b727a/"
+              target="_blank"
+              rel="nofollow noopener noreferrer">
               <LinkedInLogoIcon />
             </Link>
           </Button>

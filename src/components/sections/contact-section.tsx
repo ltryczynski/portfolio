@@ -7,16 +7,22 @@ import { useActiveSection } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import { useState } from "react";
 // import { sendEmail } from "@/actions/sendEmail";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactSection() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSendAction = async (formData: FormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-    await sendEmail(formData);
+    const sendMessage = sendEmail(formData);
+    toast.promise(sendMessage, {
+      pending: "Message is sending...",
+      success: "Message sent 👌",
+      error: "Failed to send message 🤯",
+    });
+
     setIsLoading(false);
   };
-
   const { ref } = useActiveSection("Contact");
   return (
     <Wrapper
@@ -31,7 +37,18 @@ export default function ContactSection() {
         </a>{" "}
         or through this form.
       </p>
-
+      <ToastContainer
+        position="top-right"
+        autoClose={4500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <form
         className="mt-10 flex flex-col gap-2 max-w-[768px] w-full"
         action={handleSendAction}
