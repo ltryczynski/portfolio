@@ -155,8 +155,6 @@ export function useActiveSection(section: SectionProps) {
     });
     return { ref, isIntersecting };
 };
-
-
 export function UseOnClickOutside(refs: React.RefObject<HTMLElement>[], handler: () => void) {
     useEffect(() => {
         const closePopover = (e: MouseEvent) => {
