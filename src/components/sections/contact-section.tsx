@@ -113,7 +113,7 @@ export default function ContactSection() {
             size="lg"
             variant="outline"
             disabled={!disabledButton}
-            className="w-max border-gray-50/50 self-end disabled:bg-slate-50/80 disabled:text-gray-950">
+            className="w-max border-gray-50/50  disabled:bg-slate-50/80 disabled:text-gray-950">
             {isLoading ? "Sending..." : "Submit"}
           </Button>
         </div>
