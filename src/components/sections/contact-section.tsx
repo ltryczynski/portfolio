@@ -5,13 +5,17 @@ import Wrapper from "../wrapper";
 import { Button } from "../ui/button";
 import { useActiveSection } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
-import { useState } from "react";
-// import { sendEmail } from "@/actions/sendEmail";
+import { useRef, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactSection() {
   const [isLoading, setIsLoading] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [isVerified, setIsVerified] = useState(false);
+
+  const disabledButton = isVerified || isLoading;
 
   const handleSendAction = async (formData: FormData) => {
     const sendMessage = sendEmail(formData);
@@ -23,6 +27,34 @@ export default function ContactSection() {
 
     setIsLoading(false);
   };
+
+  async function handleCaptchaSubmission(token: string | null) {
+    try {
+      if (token) {
+        await fetch("/api", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+        setIsVerified(true);
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (e) {
+      setIsVerified(false);
+    }
+  }
+
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
+
+  function handleExpired() {
+    setIsVerified(false);
+  }
+
   const { ref } = useActiveSection("Contact");
   return (
     <Wrapper
@@ -68,11 +100,17 @@ export default function ContactSection() {
           required
           maxLength={1000}
         />
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+          ref={recaptchaRef}
+          onChange={handleChange}
+          onExpired={handleExpired}
+        />
         <Button
           type="submit"
           size="lg"
           variant="outline"
-          disabled={isLoading}
+          disabled={!disabledButton}
           className="w-max border-gray-50/50 self-end disabled:bg-slate-50/80 disabled:text-gray-950">
           {isLoading ? "Sending..." : "Submit"}
         </Button>
