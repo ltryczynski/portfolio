@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -7,8 +8,9 @@ export default function Footer() {
         <small>&copy; 2024 All Rights reserved. LTmedia</small>
         <small>
           <ul className="flex gap-5">
-            <li className="hover:text-gray-50 transition">Privacy Policy</li>
-            <li className="hover:text-gray-50 transition">Terms of Service</li>
+            <li className="hover:text-gray-50 transition">
+              <Link href="/privacy-policy">Privacy Policy</Link>
+            </li>
           </ul>
         </small>
       </div>

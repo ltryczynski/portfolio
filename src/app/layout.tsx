@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ActiveSectionProvider } from "@/context/active-section-context";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Front-End Developer | Łukasz Tryczyński | Portfolio",
@@ -20,6 +21,27 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${inter.className} antialiased w-screen overflow-x-hidden bg-gray-950 text-gray-50 overflow-y-scroll`}>
+        <Script
+          id="gtm-head"
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NMRMCDWJ');
+            `,
+          }}
+          strategy="beforeInteractive"
+        />
+        `
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NMRMCDWJ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}></iframe>
+        </noscript>
         <ActiveSectionProvider>
           <Header />
           {children}
