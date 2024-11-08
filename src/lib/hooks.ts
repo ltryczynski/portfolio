@@ -47,13 +47,10 @@ export function useIntersectionObserver({
     const frozen = state.entry?.isIntersecting && freezeOnceVisible
 
     useEffect(() => {
-        // Ensure we have a ref to observe
         if (!ref) return
 
-        // Ensure the browser supports the Intersection Observer API
         if (!('IntersectionObserver' in window)) return
 
-        // Skip if frozen
         if (frozen) return
 
         let unobserve: (() => void) | undefined
@@ -101,7 +98,6 @@ export function useIntersectionObserver({
         freezeOnceVisible,
     ])
 
-    // ensures that if the observed element changes, the intersection observer is reinitialized
     const prevRef = useRef<Element | null>(null)
 
     useEffect(() => {
@@ -123,7 +119,6 @@ export function useIntersectionObserver({
         state.entry,
     ] as IntersectionReturn
 
-    // Support object destructuring, by adding the specific values.
     result.ref = result[0]
     result.isIntersecting = result[1]
     result.entry = result[2]
@@ -141,8 +136,6 @@ export function useActiveSectionContext() {
     return context;
 }
 
-
-
 export function useActiveSection(section: SectionProps) {
     const context = useActiveSectionContext();
     const [ref, isIntersecting] = useIntersectionObserver({
@@ -155,12 +148,14 @@ export function useActiveSection(section: SectionProps) {
     });
     return { ref, isIntersecting };
 };
+
 export function UseOnClickOutside(refs: React.RefObject<HTMLElement>[], handler: () => void) {
     useEffect(() => {
         const closePopover = (e: MouseEvent) => {
             if (
                 e.target instanceof HTMLElement &&
-                refs.every(ref => !ref.current?.contains(e.target as Node))
+                refs.every(ref => !ref.current?.contains(e.target as Node)) &&
+                window.innerWidth < 768
             ) {
                 handler();
             }
