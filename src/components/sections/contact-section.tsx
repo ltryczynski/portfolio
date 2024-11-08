@@ -64,8 +64,8 @@ export default function ContactSection() {
       <H2>Contact me</H2>
       <p className="text-center text-gray-50/60 mt-3">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@example.com">
-          example@example.com
+        <a className="underline" href="mailto:kontakt@lt-media.pl">
+          kontakt@lt-media.pl
         </a>{" "}
         or through this form.
       </p>
@@ -100,21 +100,23 @@ export default function ContactSection() {
           required
           maxLength={1000}
         />
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-          ref={recaptchaRef}
-          theme="dark"
-          onChange={handleChange}
-          onExpired={handleExpired}
-        />
-        <Button
-          type="submit"
-          size="lg"
-          variant="outline"
-          disabled={!disabledButton}
-          className="w-max border-gray-50/50 self-end disabled:bg-slate-50/80 disabled:text-gray-950">
-          {isLoading ? "Sending..." : "Submit"}
-        </Button>
+        <div className="flex md:justify-between gap-5 flex-wrap items-start">
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+            ref={recaptchaRef}
+            theme="dark"
+            onChange={handleChange}
+            onExpired={handleExpired}
+          />
+          <Button
+            type="submit"
+            size="lg"
+            variant="outline"
+            disabled={!disabledButton}
+            className="w-max border-gray-50/50 self-end disabled:bg-slate-50/80 disabled:text-gray-950">
+            {isLoading ? "Sending..." : "Submit"}
+          </Button>
+        </div>
       </form>
     </Wrapper>
   );
