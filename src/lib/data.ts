@@ -49,6 +49,27 @@ export const projectsData = [
         inProgress: true,
     },
     {
+        title: "TalkNow",
+        description:
+            "A blog template built with modern web technologies to provide a seamless and interactive user experience.",
+        tags: ["React", "Postgress", "Next.js", "Prisma", "Framer-motion", "Tailwind", 'TypeScript'],
+        imageUrl: '/talknow.jpg',
+        projectUrl: 'https://talknow.ltmedia.pl/',
+        external: false,
+        inProgress: false,
+    },
+    {
+        title: "Landing Agency",
+        description:
+            "Landing page for a digital agency. It uses Swiper for the slider and GSAP for animations.",
+        tags: ["React", "Next.js", "Typescript", "Tailwind", "GSAP", 'Swiper',],
+        imageUrl: '/landing.jpg',
+        projectUrl: 'https://landing.ltmedia.pl/',
+        external: false,
+        inProgress: false,
+    },
+
+    {
         title: "Evento",
         description:
             "Nextjs app. It uses Postgress as a database, Prisma as an ORM and Tailwind for styling and Framer-motion for animations.",
@@ -68,27 +89,6 @@ export const projectsData = [
         external: false,
         inProgress: false,
 
-    },
-    {
-        title: "TalkNow",
-        description:
-            // blog template
-            "A blog template built with modern web technologies to provide a seamless and interactive user experience.",
-        tags: ["React", "Postgress", "Next.js", "Prisma", "Framer-motion", "Tailwind", 'TypeScript'],
-        imageUrl: '/talknow.jpg',
-        projectUrl: 'https://talknow.ltmedia.pl/',
-        external: false,
-        inProgress: false,
-    },
-    {
-        title: "Landing Agency",
-        description:
-            "Landing page for a digital agency. It uses Swiper for the slider and GSAP for animations.",
-        tags: ["React", "Next.js", "Typescript", "Tailwind", "GSAP", 'Swiper',],
-        imageUrl: '/landing.jpg',
-        projectUrl: 'https://landing.ltmedia.pl/',
-        external: false,
-        inProgress: false,
     },
     {
         title: "Treckbag",
