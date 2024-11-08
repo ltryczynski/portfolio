@@ -100,7 +100,7 @@ export default function ContactSection() {
           required
           maxLength={1000}
         />
-        <div className="flex md:justify-between gap-5 flex-wrap items-start">
+        <div className="flex justify-center md:justify-between gap-5 flex-wrap items-start">
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
             ref={recaptchaRef}
