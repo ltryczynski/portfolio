@@ -3,12 +3,12 @@
 import React, { useEffect, useRef } from "react";
 import Wrapper from "../wrapper";
 import H2 from "../h2";
-import Image from "next/image";
+// import Image from "next/image";
 import { motion } from "framer-motion";
 import { useActiveSection } from "@/lib/hooks";
 import lottie, { AnimationItem } from "lottie-web";
 
-const ImageMotion = motion.create(Image);
+// const ImageMotion = motion.create(Image);
 
 export default function AboutMe() {
   const { ref } = useActiveSection("About");
