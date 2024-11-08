@@ -29,12 +29,34 @@ export const links = [
 
 export const projectsData = [
     {
+        title: "ChatApp",
+        description:
+            "Chat application built with nextjs and pusher. It uses Postgress as a database and styled with Tailwindcss.",
+        tags: ["Postgress", "Next.js", "Pusher", "Tailwind", "TypeScript"],
+        imageUrl: '/chatme.png',
+        projectUrl: 'https://talknow.pl/',
+        external: false,
+        inProgress: true,
+    },
+    {
+        title: "Petsoft",
+        description:
+            "Nextjs app to manage pet grooming salons. It uses Postgress , Prisma ORM and Tailwind for styling and Framer-motion for animations.",
+        tags: ["Next.js", "Prisma", "Postgress", 'TypeScript', "Tailwind"],
+        imageUrl: '/petsoft.png',
+        projectUrl: 'https://petsoft.ltmedia.pl/',
+        external: false,
+        inProgress: true,
+    },
+    {
         title: "Evento",
         description:
             "Nextjs app. It uses Postgress as a database, Prisma as an ORM and Tailwind for styling and Framer-motion for animations.",
-        tags: ["React", "Postgress", "Next.js", "Prisma", "Framer-motion", 'TypeScript', "Tailwind",],
+        tags: ["Next.js", "Prisma", "Framer-motion", 'TypeScript', "Tailwind",],
         imageUrl: '/evento.jpg',
         projectUrl: 'https://evento.ltmedia.pl/',
+        external: false,
+        inProgress: false,
     },
     {
         title: "rmtDev",
@@ -43,6 +65,9 @@ export const projectsData = [
         tags: ["React", "TypeScript", "Vite", 'React-query'],
         imageUrl: '/rmtdev.png',
         projectUrl: 'https://rmtdev.ltmedia.pl/',
+        external: false,
+        inProgress: false,
+
     },
     {
         title: "TalkNow",
@@ -52,6 +77,8 @@ export const projectsData = [
         tags: ["React", "Postgress", "Next.js", "Prisma", "Framer-motion", "Tailwind", 'TypeScript'],
         imageUrl: '/talknow.jpg',
         projectUrl: 'https://talknow.ltmedia.pl/',
+        external: false,
+        inProgress: false,
     },
     {
         title: "Landing Agency",
@@ -60,6 +87,8 @@ export const projectsData = [
         tags: ["React", "Next.js", "Typescript", "Tailwind", "GSAP", 'Swiper',],
         imageUrl: '/landing.jpg',
         projectUrl: 'https://landing.ltmedia.pl/',
+        external: false,
+        inProgress: false,
     },
     {
         title: "Treckbag",
@@ -68,6 +97,8 @@ export const projectsData = [
         tags: ["React", "Vite", "Javascript", "Zusand"],
         imageUrl: '/treckbag.jpg',
         projectUrl: 'https://treckbag.ltmedia.pl/',
+        external: false,
+        inProgress: false,
     },
 
     {
@@ -76,7 +107,9 @@ export const projectsData = [
             "Buissness website. It uses Wordpress CMS, GSAP for animations and ACF for custom fields.",
         tags: ["WordPress", "GSAP", "mySQL", "PHP", "ACF"],
         imageUrl: '/dorjan.jpg',
-        projectUrl: 'https://treckbag.ltmedia.pl/',
+        projectUrl: 'https://dorjan-energia.pl/',
+        external: true,
+        inProgress: false,
     },
 
     {
@@ -85,7 +118,9 @@ export const projectsData = [
             "Buissness website. It uses Wordpress CMS and ACF for custom fields.",
         tags: ["Wordpress", "mySQL", "PHP", "ACF"],
         imageUrl: '/ciemneszkielko.jpg',
-        projectUrl: 'https://treckbag.ltmedia.pl/',
+        projectUrl: 'https://ciemneszkielko.pl/',
+        external: true,
+        inProgress: false,
     },
 ] as const;
 
@@ -101,6 +136,7 @@ export const skills = [
     "HTML5",
     "Git",
     "Zod",
+    "react-hook-form",
     "Zustand",
     "Tailwindcss",
     "GSAP",

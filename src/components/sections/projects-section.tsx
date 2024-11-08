@@ -23,6 +23,8 @@ export default function ProjectsSection() {
             imageUrl={project.imageUrl}
             tags={[...project.tags]}
             projectUrl={project.projectUrl}
+            inProgress={project.inProgress}
+            external={project.external}
           />
         ))}
       </div>

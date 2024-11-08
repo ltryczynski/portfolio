@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 
 type ProjectProps = {
   title: string;
@@ -9,9 +10,19 @@ type ProjectProps = {
   tags: string[];
   imageUrl: string;
   projectUrl: string;
+  inProgress?: boolean;
+  external?: boolean;
 };
 
-export default function Project({ title, description, tags, imageUrl, projectUrl }: ProjectProps) {
+export default function Project({
+  title,
+  description,
+  tags,
+  imageUrl,
+  projectUrl,
+  inProgress = false,
+  external = false,
+}: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
@@ -29,9 +40,26 @@ export default function Project({ title, description, tags, imageUrl, projectUrl
         margin: "-100px",
         once: true,
       }}
-      className="group">
-      <a href={projectUrl} target="_blank" className="block w-full">
-        <article className="bg-gray-50/5 w-full border border-gray-50/10 self-center overflow-hidden sm:pr-8 relative sm:h-[24rem] transition">
+      className="group relative overflow-hidden">
+      <a
+        href={inProgress ? "#" : projectUrl}
+        target={inProgress ? "" : "_blank"}
+        rel={external ? "nofollow noopener noreferrer" : ""}
+        onClick={inProgress ? (e) => e.preventDefault() : undefined}
+        className={`block w-full`}>
+        {inProgress && (
+          <div className="w-full h-full absolute bg-gray-950 z-10 opacity-80 flex flex-col justify-center items-center gap-2 text-xl font-medium">
+            <p className="text-2xl font-bold">{title}</p>
+            Project in progress
+          </div>
+        )}
+        <article
+          className={clsx(
+            `bg-gray-50/5 w-full border border-gray-50/10 self-center overflow-hidden sm:pr-8 relative sm:h-[24rem] transition`,
+            {
+              "blur-sm": inProgress,
+            }
+          )}>
           <div className="pt-5 pl-5 pb-5 sm:pl-10 sm:pr-2 sm:pt-10 max-w-[75%] sm:max-w-[70%] lg:max-w-[75%]   xl:max-w-[60%] flex flex-col h-full">
             <h3 className="text-2xl font-semibold">{title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-gray-50/70 xl:mt-0">{description}</p>
