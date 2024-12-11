@@ -46,7 +46,7 @@ export const projectsData = [
         imageUrl: '/petsoft.png',
         projectUrl: 'https://petsoft.ltmedia.pl/',
         external: false,
-        inProgress: true,
+        inProgress: false,
     },
     {
         title: "TalkNow",
