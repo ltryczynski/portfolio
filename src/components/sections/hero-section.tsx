@@ -104,7 +104,7 @@ export default function HeroWrapper() {
           </Button>
           <Button asChild size="icon-lg" variant="outline">
             <Link
-              href="https://www.linkedin.com/in/%C5%82ukasz-tryczy%C5%84ski-6289b727a/"
+              href="https://www.linkedin.com/in/%C5%82ukasz-tryczy%C5%84ski-13a0021a2/"
               target="_blank"
               rel="nofollow noopener noreferrer">
               <LinkedInLogoIcon />
