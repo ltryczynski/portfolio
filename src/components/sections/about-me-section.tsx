@@ -1,35 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Wrapper from "../wrapper";
 import H2 from "../h2";
 // import Image from "next/image";
 import { motion } from "framer-motion";
 import { useActiveSection } from "@/lib/hooks";
-import lottie, { AnimationItem } from "lottie-web";
+import Image from "next/image";
 
-// const ImageMotion = motion.create(Image);
+const ImageMotion = motion.create(Image);
 
 export default function AboutMe() {
   const { ref } = useActiveSection("About");
-  const lottieRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    let instance: AnimationItem | null = null;
-    if (lottieRef.current) {
-      instance = lottie.loadAnimation({
-        container: lottieRef.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "/anim3.json",
-      });
-    }
-    return () => {
-      if (instance) {
-        instance.destroy();
-      }
-    };
-  }, []);
 
   return (
     <Wrapper
@@ -61,9 +43,32 @@ export default function AboutMe() {
           }}
         /> */}
         <div className="">
-          <div
+          <ImageMotion
+            src="/cv-photo.jpg"
+            width={500}
+            height={600}
+            alt="main photo"
+            className="border-2 aspect-square object-cover w-[200px] rounded-full object-center"
+            initial={{ opacity: 0, y: 50, scale: 0.8 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: { duration: 0.3 },
+              type: "spring",
+            }}
+            viewport={{
+              margin: "-200px",
+              once: true,
+            }}
+            transition={{
+              duration: 0.3,
+              type: "spring",
+            }}
+          />
+          {/* <div
             className="h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[250px] sm:w-[350px] md:w-[400px] lg:w-[450px]"
-            ref={lottieRef}></div>
+            ref={lottieRef}></div> */}
         </div>
       </div>
       <motion.div
